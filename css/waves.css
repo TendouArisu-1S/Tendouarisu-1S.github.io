@@ -1,0 +1,73 @@
+/* 波浪容器定位 */
+.main-hero-waves-area {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: -11px;
+  z-index: 5;
+}
+
+/* SVG 波浪尺寸 */
+.waves-area .waves-svg {
+  width: 100%;
+  height: 3rem;
+}
+
+/* 波浪动画 */
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+
+/* 每一层波浪的延迟、时长和颜色（亮色模式） */
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+  fill: #f7f9febd;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+  fill: #f7f9fe82;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+  fill: #f7f9fe36;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+  fill: #FAF6F6;
+}
+
+/* 深色模式下的波浪颜色 */
+[data-theme="dark"] .parallax > use:nth-child(1) {
+  fill: #18171dc8;
+}
+[data-theme="dark"] .parallax > use:nth-child(2) {
+  fill: #18171d80;
+}
+[data-theme="dark"] .parallax > use:nth-child(3) {
+  fill: #18171d3e;
+}
+[data-theme="dark"] .parallax > use:nth-child(4) {
+  fill: #18171d;
+}
+
+/* 关键帧动画：波浪水平移动 */
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+  .waves-area .waves-svg {
+    height: 40px;
+    min-height: 40px;
+  }
+}
